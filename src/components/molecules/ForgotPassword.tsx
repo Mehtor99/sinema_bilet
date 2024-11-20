@@ -1,6 +1,8 @@
 import React from "react";
 
 function ForgotPassword() {
+
+
   return (
     <>
       <div className="card text-center" style={{ width: "300px;" }}>

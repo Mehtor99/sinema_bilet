@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 function Navbar() {
   return (
@@ -10,9 +10,9 @@ function Navbar() {
             src="logo.png"
             style={{ width: "80px", height: "80px", borderRadius: "50%" }}
           />
-          <Link to="/" style={{ textDecoration: "none" }}>
+          <NavLink to="/" style={{ textDecoration: "none" }}>
             <h1 className="navbar-brand">Sinema App</h1>
-          </Link>
+          </NavLink>
 
           <div
             className="collapse navbar-collapse flex-grow-0"
@@ -32,14 +32,14 @@ function Navbar() {
               </form>
             </div>
             <div>
-              <Link to="/login">
+              <NavLink to="/login">
                 <div
                   className="border border-1 border-dark mx-2 px-2 py-1 rounded"
                   style={{ cursor: "pointer" }}
                 >
                   <i className="fa-solid fa-user"></i>
                 </div>
-              </Link>
+              </NavLink>
             </div>
           </div>
         </div>
