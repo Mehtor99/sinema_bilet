@@ -1,0 +1,29 @@
+.sinema-card{
+   
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.sinema-card:hover{
+   
+    cursor: pointer;
+    overflow: hidden;
+    
+}
+
+.sinema-image{
+   
+    transition: transform 0.3s ease-in-out;
+  
+}
+
+
+
+.sinema-image:hover{
+    transform: scale(1.15);
+    transition: transform 0.3s ease-in-out;
+  
+}
+.image-div{
+    overflow: hidden;
+}
