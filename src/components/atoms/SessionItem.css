@@ -1,0 +1,7 @@
+.session-item {
+    border-right: 2px solid black; /* Sağ tarafa sınır ekle */
+  }
+  
+/**  .session-item:last-child {
+    border-right: none; /* Son öğede sağ sınırı kaldır 
+  }*/

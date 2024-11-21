@@ -6,6 +6,7 @@ import RegisterPage from "./page/RegisterPage";
 import ForgotPasswordPage from "./page/ForgotPasswordPage";
 import MoviePage from "./page/MoviePage";
 import SeatSelectionPage from "./page/SeatSelectionPage";
+import DenemePage from "./page/DenemePage";
 
 function RouterPage() {
   return (
@@ -17,6 +18,7 @@ function RouterPage() {
         <Route path="/forgot-password" element={<ForgotPasswordPage />}></Route>
         <Route path="/movie-page" element={<MoviePage/>}></Route>
         <Route path="/seat-selection" element={<SeatSelectionPage/>}></Route>
+        <Route path="/deneme" element={<DenemePage/>}></Route>
       </Routes>
     </BrowserRouter>
   );
