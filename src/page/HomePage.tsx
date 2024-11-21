@@ -2,6 +2,7 @@ import React from "react";
 import Navbar from "../components/molecules/Navbar";
 import Filter from "../components/molecules/Filter";
 import Card from "../components/molecules/Card";
+import CardList from "../components/organisms/CardList";
 function HomePage() {
 
   
@@ -19,21 +20,7 @@ function HomePage() {
         </div>
 
         {/* Film Listesi */}
-        <div className="row">
-      
-          <div className="col-3"><Card imageUrl="https://picsum.photos/200/200" title="Gladyatör"/></div>
-          <div className="col-3"><Card imageUrl="https://picsum.photos/200/200" title="Gladyatör"/></div>
-          <div className="col-3"><Card imageUrl="https://picsum.photos/200/200" title="Gladyatör"/></div>
-          <div className="col-3"><Card imageUrl="https://picsum.photos/200/200" title="Gladyatör"/></div>
-          <div className="col-3"><Card imageUrl="https://picsum.photos/200/200" title="Gladyatör"/></div>
-          <div className="col-3"><Card imageUrl="https://picsum.photos/200/200" title="Gladyatör"/></div>
-          <div className="col-3"><Card imageUrl="https://picsum.photos/200/200" title="Gladyatör"/></div>
-          <div className="col-3"><Card imageUrl="https://picsum.photos/200/200" title="Gladyatör"/></div>
-          <div className="col-3"><Card imageUrl="https://picsum.photos/200/200" title="Gladyatör"/></div>
-          <div className="col-3"><Card imageUrl="https://picsum.photos/200/200" title="Gladyatör"/></div>
-
-
-        </div>
+          <CardList/>
       </div>
     </>
   );
