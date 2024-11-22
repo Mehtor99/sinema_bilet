@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 function SalonCard() {
   return (
@@ -27,11 +28,13 @@ function SalonCard() {
               <span>Film Dili</span>
             </div>
             <div className="col-9">
-              <input
-                type="button"
-                value="saat"
-                className="btn btn-outline-primary me-2 mt-2"
-              />
+              <NavLink to="/seat-selection">
+                <input
+                  type="button"
+                  value="saat"
+                  className="btn btn-outline-primary me-2 mt-2"
+                />
+              </NavLink>
               <input
                 type="button"
                 value="saat"
