@@ -1,16 +1,16 @@
 import React from "react";
-
+import RatingStar from "../atoms/RatingStar";
 function MovieHeader() {
   return (
     <div
-      className="row"
+      className="row movie-header"
       style={{
         height: "400px",
-        border: "1px solid red",
         overflow: "hidden",
         backgroundImage: "url(https://picsum.photos/400)",
         backgroundSize: "cover",
         backgroundPosition: "center",
+        color: "white",
       }}
     >
       <div className="col-3 d-flex justify-content-center">
@@ -22,15 +22,18 @@ function MovieHeader() {
             left: 0,
             width: "100%",
             height: "100%",
-            backgroundColor: "rgba(0, 0, 0, 0.5)", // Yarı saydam siyah (karartma)
+            backgroundColor: "rgba(0, 0, 0, 0.6)", // Yarı saydam siyah (karartma)
             padding: "0px 30px",
+            borderRadius: "10px",
           }}
         >
           <div className="col">
             {" "}
             <h2>MovieTitle</h2>
           </div>
-          <div className="col">Raiting</div>
+          <div className="col">
+            <RatingStar />
+          </div>
           <div className="col">
             <div className="row">
               <div className="col p-2">

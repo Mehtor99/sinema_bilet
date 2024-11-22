@@ -2,7 +2,7 @@ import React from "react";
 
 function SalonCard() {
   return (
-    <div className="card mt-5">
+    <div className="card mt-5 mb-5">
       <div className="card-header">
         <div className="row">
           <div className="col-4">
@@ -23,41 +23,77 @@ function SalonCard() {
         <li className="list-group-item">
           <div className="row">
             <div className="col-3">
-            <h5>Salon Adı</h5>
-            <span>Film Dili</span></div>
+              <h5>Salon Adı</h5>
+              <span>Film Dili</span>
+            </div>
             <div className="col-9">
-                <input type="button" value="saat" className="btn btn-outline-primary me-2 mt-2"/>
-                <input type="button" value="saat" className="btn btn-outline-primary me-2 mt-2"/>
-                <input type="button" value="saat" className="btn btn-outline-primary me-2 mt-2" />
+              <input
+                type="button"
+                value="saat"
+                className="btn btn-outline-primary me-2 mt-2"
+              />
+              <input
+                type="button"
+                value="saat"
+                className="btn btn-outline-primary me-2 mt-2"
+              />
+              <input
+                type="button"
+                value="saat"
+                className="btn btn-outline-primary me-2 mt-2"
+              />
             </div>
           </div>
-          
         </li>
         <li className="list-group-item">
           <div className="row">
             <div className="col-3">
-            <h5>Salon Adı</h5>
-            <span>Film Dili</span></div>
+              <h5>Salon Adı</h5>
+              <span>Film Dili</span>
+            </div>
             <div className="col-9">
-                <input type="button" value="saat" className="btn btn-outline-primary me-2 mt-2"/>
-                <input type="button" value="saat" className="btn btn-outline-primary me-2 mt-2"/>
-                <input type="button" value="saat" className="btn btn-outline-primary me-2 mt-2" />
+              <input
+                type="button"
+                value="saat"
+                className="btn btn-outline-primary me-2 mt-2"
+              />
+              <input
+                type="button"
+                value="saat"
+                className="btn btn-outline-primary me-2 mt-2"
+              />
+              <input
+                type="button"
+                value="saat"
+                className="btn btn-outline-primary me-2 mt-2"
+              />
             </div>
           </div>
-          
         </li>
         <li className="list-group-item">
           <div className="row">
             <div className="col-3">
-            <h5>Salon Adı</h5>
-            <span>Film Dili</span></div>
+              <h5>Salon Adı</h5>
+              <span>Film Dili</span>
+            </div>
             <div className="col-9">
-                <input type="button" value="saat" className="btn btn-outline-primary me-2 mt-2"/>
-                <input type="button" value="saat" className="btn btn-outline-primary me-2 mt-2"/>
-                <input type="button" value="saat" className="btn btn-outline-primary me-2 mt-2" />
+              <input
+                type="button"
+                value="saat"
+                className="btn btn-outline-primary me-2 mt-2"
+              />
+              <input
+                type="button"
+                value="saat"
+                className="btn btn-outline-primary me-2 mt-2"
+              />
+              <input
+                type="button"
+                value="saat"
+                className="btn btn-outline-primary me-2 mt-2"
+              />
             </div>
           </div>
-          
         </li>
       </ul>
     </div>
