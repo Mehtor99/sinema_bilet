@@ -1,16 +1,36 @@
-import React from "react";
+import React, { useState } from "react";
+import { RegisterRequest } from "../../models/RegisterRequest";
+import { useDispatch } from "react-redux";
+import { sinemaDispatch } from "../../store";
+import { fetchRegister } from "../../store/feature/authSlice";
+
 
 
 function Register() {
+  
+
+  const[name,setName] = useState('');
+  const[email,setEmail] = useState('');
+  const[password,setPassword] = useState('');
+  const[rePassword,setRepassword] = useState('');
+
+  const dispatch = useDispatch<sinemaDispatch>();
+
+  const register = () => {
+    dispatch(fetchRegister({name,email,password,rePassword}));
+  }
+
+
+
   return (
     <>
-      <section className="vh-100" style={{ backgroundColor: "#eee;" }}>
+      <section className="vh-100" style={{ backgroundColor: "#eee"}}>
         <div className="container h-100">
           <div className="row d-flex justify-content-center align-items-center h-100">
             <div className="col-lg-12 col-xl-11">
               <div
                 className="card text-black"
-                style={{ borderRadius: "25px;" }}
+                style={{ borderRadius: "25px" }}
               >
                 <div className="card-body p-md-5">
                   <div className="row justify-content-center">
@@ -30,6 +50,7 @@ function Register() {
                               type="text"
                               id="form3Example1c"
                               className="form-control"
+                              onChange={(evt)=>setName(evt.target.value)}
                             />
                             <label className="form-label">Your Name</label>
                           </div>
@@ -45,6 +66,7 @@ function Register() {
                               type="email"
                               id="form3Example3c"
                               className="form-control"
+                              onChange={(evt)=>setEmail(evt.target.value)}
                             />
                             <label className="form-label">Your Email</label>
                           </div>
@@ -60,6 +82,7 @@ function Register() {
                               type="password"
                               id="form3Example4c"
                               className="form-control"
+                              onChange={(evt)=>setPassword(evt.target.value)}
                             />
                             <label className="form-label">Password</label>
                           </div>
@@ -75,6 +98,7 @@ function Register() {
                               type="password"
                               id="form3Example4cd"
                               className="form-control"
+                              onChange={(evt)=>setRepassword(evt.target.value)}
                             />
                             <label className="form-label">
                               Repeat your password
@@ -101,6 +125,7 @@ function Register() {
                             data-mdb-button-init
                             data-mdb-ripple-init
                             className="btn btn-primary btn-lg"
+                            onClick={register}
                           >
                             Register
                           </button>

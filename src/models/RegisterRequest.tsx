@@ -1,6 +1,6 @@
-export interface IRegisterRequest{
+export interface RegisterRequest{
   name: string
   email: string
   password: string
-  repassword: string
+  rePassword: string
 }
