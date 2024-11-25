@@ -1,16 +1,29 @@
 import { Select } from "@mui/material";
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { ISeat } from "../../models/ISeat";
+import apis from "../../config/RestApis";
+import { IBaseResponse } from "../../models/IBaseResponse";
 interface ISeatSlice {
+  seatList: ISeat[]
   SelectedSeats: ISeat[];
   isNineSelected: boolean;
   totalPrice: number;
 }
 const initialState: ISeatSlice = {
+  seatList: [],
   SelectedSeats: [],
   isNineSelected: false,
   totalPrice: 0,
 };
+
+
+export const fetchAllSeats = createAsyncThunk(
+  '/seat/fetchAllSeats',
+  async () => {
+    return await fetch(apis.seatService+'/get-all-seats').then(data=>data.json())
+  }
+)
+
 
 const seatSlice = createSlice({
   name: "seat",
@@ -34,6 +47,11 @@ const seatSlice = createSlice({
       state.isNineSelected = false;
     },
   },
+  extraReducers: (builder)=>{
+    builder.addCase(fetchAllSeats.fulfilled,(state,action:PayloadAction<IBaseResponse>)=>{
+      state.seatList = action.payload.data;
+    })
+  }
 });
 
 export const { setSelectedSeats, removeSeat } = seatSlice.actions;

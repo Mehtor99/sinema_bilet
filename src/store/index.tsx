@@ -1,10 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { useSelector } from "react-redux";
-import { SeatSlice } from "./feature";
+import { authSLice, SeatSlice } from "./feature";
 
 const store = configureStore({
   reducer: {
     seat: SeatSlice,
+    auth: authSLice
   },
 });
 

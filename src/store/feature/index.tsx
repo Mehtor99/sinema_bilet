@@ -1,3 +1,4 @@
 import SeatSlice from "./SeatSlice";
+import authSLice from './authSlice'
 
-export { SeatSlice };
+export { SeatSlice,authSLice };

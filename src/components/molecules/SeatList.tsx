@@ -1,16 +1,23 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Seat from "../atoms/Seat";
+import { useDispatch } from "react-redux";
+import { sinemaDispatch, useAppSelector } from "../../store";
+import { fetchAllSeats } from "../../store/feature/SeatSlice";
 
 function SeatList() {
-  const rows = []; // Harf ve numaraların kombinasyonunu tutacak dizi
+  
+  const dispatch = useDispatch<sinemaDispatch>();
+  
 
-  for (let i = 1; i <= 12; i++) {
-    // Sayı döngüsü
-    for (let j = 97; j < 102; j++) {
-      // 'a' ile 'e' arasındaki harflerin ASCII kodları (97-101)
-      rows.push({ letter: String.fromCharCode(j).toUpperCase(), no: i });
-    }
-  }
+    useEffect(()=>{       
+    dispatch(fetchAllSeats());                 
+  },[]);
+
+  const seats = useAppSelector(state => state.seat.seatList); 
+
+  
+ 
+
   return (
     <div className="container align-content-center" style={{ height: "90vh" }}>
       <div className="row ">
@@ -20,7 +27,7 @@ function SeatList() {
             <div className="col">
               {
                 <div>
-                  {rows.map((seat, index) => (
+                  {seats.map((seat, index) => (
                     <Seat
                       id={index}
                       key={`${seat.letter}-${seat.no}`}
