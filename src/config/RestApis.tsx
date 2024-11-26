@@ -5,10 +5,9 @@ const devUrl = 'http://localhost:9090/v1/dev';
 const server = devUrl;
 
 const apis = {
-    authService: server+ '/user',
     userService: server+ '/user',
-    postService: server+'/post',
-    seatService: server+'/seat'
+    seatService: server+'/seat',
+    movieService: server+'/movie'
 }
 
 export default apis;

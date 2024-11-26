@@ -1,22 +1,27 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Card from '../molecules/Card'
+import { sinemaDispatch, useAppSelector } from '../../store'
+import { useDispatch } from 'react-redux';
+import { fetchGetAllMovie } from '../../store/feature/movieSlice';
 
 function CardList() {
+  const movieList = useAppSelector(state => state.movie.movieList);
+  const dispatch = useDispatch<sinemaDispatch>();
+  useEffect(()=>{
+    dispatch(fetchGetAllMovie());
+  },[])
+
   return (
     <div className="row">
-      
-          <div className="col-3"><Card id={1} imageUrl="https://picsum.photos/200/200" title="Gladyatör"/></div>
-          <div className="col-3"><Card id={2}  imageUrl="https://picsum.photos/200/200" title="Gladyatör"/></div>
-          <div className="col-3"><Card id={3} imageUrl="https://picsum.photos/200/200" title="Gladyatör"/></div>
-          <div className="col-3"><Card id={4} imageUrl="https://picsum.photos/200/200" title="Gladyatör"/></div>
-          <div className="col-3"><Card id={5} imageUrl="https://picsum.photos/200/200" title="Gladyatör"/></div>
-          <div className="col-3"><Card id={6} imageUrl="https://picsum.photos/200/200" title="Gladyatör"/></div>
-          <div className="col-3"><Card id={7} imageUrl="https://picsum.photos/200/200" title="Gladyatör"/></div>
-          <div className="col-3"><Card id={8} imageUrl="https://picsum.photos/200/200" title="Gladyatör"/></div>
-          <div className="col-3"><Card id={9} imageUrl="https://picsum.photos/200/200" title="Gladyatör"/></div>
-          <div className="col-3"><Card id={10} imageUrl="https://picsum.photos/200/200" title="Gladyatör"/></div>
+      {
+        movieList.map((movie,index) => {
+          return  <div className="col-3"><Card key={index} id={movie.id} imageUrl={movie.thumbnail} title={movie.title}/></div>
+        })
+      }
 
 
+
+          
         </div>
   )
 }
