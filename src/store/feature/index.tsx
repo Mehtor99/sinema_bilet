@@ -1,4 +1,5 @@
-import SeatSlice from "./SeatSlice";
-import authSLice from './authSlice'
+import SeatSlice from './SeatSlice';
+import authSLice from './authSlice';
+import movieSlice from './movieSlice'
 
-export { SeatSlice,authSLice };
+export { SeatSlice,authSLice, movieSlice };
