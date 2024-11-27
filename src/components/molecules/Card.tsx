@@ -12,7 +12,7 @@ function Card(props: ICard) {
   const  {id,imageUrl,title} = props; 
   return (
     <>
-    <div className="card mt-5 sinema-card" style={{width:"18rem;",border:'none'}}>
+    <div className="card mt-5 sinema-card" style={{width:"18rem",border:'none'}}>
       <NavLink to={'/movie-page?id='+id}> 
         <div className="image-div">
           <img src={props.imageUrl} className="card-img-top rounded-3 sinema-image" />
