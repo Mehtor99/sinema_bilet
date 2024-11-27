@@ -1,13 +1,25 @@
-import React from "react";
+import React, { useEffect } from "react";
 import RatingStar from "../atoms/RatingStar";
-function MovieHeader() {
+import { IMovieModel } from "../../models/IMovieModel";
+import { useDispatch } from "react-redux";
+import { sinemaDispatch, useAppSelector } from "../../store";
+import { fetchGetMovieById } from "../../store/feature/movieSlice";
+import { Link, useParams } from "react-router-dom";
+
+function MovieHeader(props:IMovieModel) {
+
+     const movie = props;
+
   return (
-    <div
+    <>
+    {
+      movie && 
+      <div
       className="row movie-header"
       style={{
         height: "400px",
         overflow: "hidden",
-        backgroundImage: "url(https://picsum.photos/400)",
+        backgroundImage: `url(${movie.imageUrl})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
         color: "white",
@@ -29,10 +41,14 @@ function MovieHeader() {
         >
           <div className="col">
             {" "}
-            <h2>MovieTitle</h2>
+            <h2>{movie.title}</h2>
           </div>
           <div className="col">
-            <RatingStar />
+            <span>
+              
+              <h5><RatingStar /> {movie.rating}</h5> 
+            </span>
+            
           </div>
           <div className="col">
             <div className="row">
@@ -44,11 +60,9 @@ function MovieHeader() {
                 />
               </div>
               <div className="col p-2">
-                <input
-                  type="button"
-                  className="btn btn-secondary"
-                  value={"Fragman İzle"}
-                />
+               <a className="btn btn-secondary" href={movie.trailer} target="_blank"> 
+                  Fragman izle
+                </a>
               </div>
             </div>
           </div>
@@ -57,6 +71,12 @@ function MovieHeader() {
       <div className="col"></div>
       <div className="col"></div>
     </div>
+
+    }
+       
+    </>
+   
+   
   );
 }
 

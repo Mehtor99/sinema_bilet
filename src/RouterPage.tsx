@@ -16,9 +16,10 @@ function RouterPage() {
         <Route path="/login" element={<Login />}></Route>
         <Route path="/register" element={<RegisterPage />}></Route>
         <Route path="/forgot-password" element={<ForgotPasswordPage />}></Route>
-        <Route path="/movie-page" element={<MoviePage/>}></Route>
+        <Route path="/movie-page/:id" element={<MoviePage/>}></Route>
         <Route path="/seat-selection" element={<SeatSelectionPage/>}></Route>
         <Route path="/deneme" element={<DenemePage/>}></Route>
+      
       </Routes>
     </BrowserRouter>
   );

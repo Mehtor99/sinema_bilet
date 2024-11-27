@@ -24,6 +24,13 @@ export const fetchGetAllMovie = createAsyncThunk(
     }
 )
 
+export const fetchGetMovieById = createAsyncThunk(
+    'fetch/fetchGetMovieById',
+    async(id:number) => {
+        return await fetch(apis.movieService+`/movie-page?id=${id}`).then(data=>data.json());
+    }
+)
+
 const movieSlice = createSlice({
     name : 'movie',
     initialState: initialMovieState,
@@ -33,12 +40,19 @@ const movieSlice = createSlice({
     extraReducers : (build)=>{
         build.addCase(fetchGetAllMovie.pending,(state)=> {state.movieIsLoading=true})
         build.addCase(fetchGetAllMovie.fulfilled,(state,action: PayloadAction<IBaseResponse>)=>{
-            state.movieIsLoading = false
+            state.movieListIsLoading = false
             if(action.payload.code === 200){
                 state.movieList = action.payload.data;
-            }    
+            }       
     })
-
+        build.addCase(fetchGetMovieById.pending,(state)=>{state.movieIsLoading=true});
+        build.addCase(fetchGetMovieById.fulfilled,(state,action: PayloadAction<IBaseResponse>)=>{
+            state.movieIsLoading = true;
+            if(action.payload.code===200){
+                state.movie = action.payload.data;
+                console.log(state.movie)
+            }
+        })
 }
 })
 
